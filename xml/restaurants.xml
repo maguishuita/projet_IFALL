@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE restaurants SYSTEM "restaurants.dtd">
+<restaurants>
+    <restaurant>
+        <coordonnees>
+            <nom>Le Gourmet</nom>
+            <adresse>123 Rue de la Gastronomie, Paris</adresse>
+            <nomRestaurateur>Jean Dupont</nomRestaurateur>
+            <description>Un restaurant raffiné offrant une cuisine française authentique.</description>
+            <images>
+                <image>
+                    <url>https://images.app.goo.gl/Dm7kWbXvHmS2TCBw8</url>
+                    <position>droite</position>
+                </image>
+            </images>
+        </coordonnees>
+        <carte>
+            <plat>
+                <type>Entrée</type>
+                <prix>15 EUR</prix>
+                <description>Salade de chèvre chaud</description>
+            </plat>
+            <plat>
+                <type>Plat</type>
+                <prix>25 EUR</prix>
+                <description>Magret de canard</description>
+            </plat>
+        </carte>
+        <menus>
+            <menu>
+                <titre>Menu Déjeuner</titre>
+                <description>Un choix de trois plats avec dessert</description>
+                <prix>40 EUR</prix>
+            </menu>
+        </menus>
+    </restaurant>
+<restaurant><coordonnees><nom>mane</nom><adresse>dakar</adresse><nomRestaurateur>bon gout</nomRestaurateur><description>yassa</description><images><image><url>sd</url><position>centre</position></image><image><url>sud</url><position>centre</position></image></images></coordonnees></restaurant></restaurants>

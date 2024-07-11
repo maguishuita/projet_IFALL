@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinema SYSTEM "films.dtd">
+<cinema>
+  <film>
+    <titre/>
+    <genre/>
+    <duree/>
+    <realisateur/>
+    <langue/>
+    <acteurs><acteur/></acteurs>
+    <annee/>
+    <notes>
+      <presse>3/5</presse>
+      <spectateurs>4/5</spectateurs>
+    </notes>
+    <synopsis/>
+    <horaires>
+      <horaire>Mer, Sam : 14:00 | 16:40 | 19:40 | 22:10</horaire>
+      <horaire>Jeu, Ven, Lun, Mar : 14:00 | 19:40 | 22:10</horaire>
+      <horaire>Dim : 10:20 | 14:00 | 16:40 | 20:20</horaire>
+    </horaires>
+  </film>
+  <!-- Ajouter plus de films ici -->
+<film><titre>degu</titre><genre>fa</genre><duree>4</duree><realisateur>faty</realisateur><langue>francais</langue><annee>2029</annee><synopsis>23</synopsis><acteurs><acteur>qw</acteur><acteur>er</acteur><acteur>ty</acteur></acteurs></film></cinema>
