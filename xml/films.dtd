@@ -1,5 +1,5 @@
 <!ELEMENT cinema (film+)>
-<!ELEMENT film (titre, genre, duree, realisateur, langue, acteurs, annee, notes?, synopsis, horaires)>
+<!ELEMENT film (titre, genre, duree, realisateur, langue, acteurs, annee, notes?, horaires)>
 <!ELEMENT titre (#PCDATA)>
 <!ELEMENT genre (#PCDATA)>
 <!ELEMENT duree (#PCDATA)>

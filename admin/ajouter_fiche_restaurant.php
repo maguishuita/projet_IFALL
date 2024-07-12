@@ -15,11 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomRestaurateur = $_POST["nomRestaurateur"];
     $description = $_POST["description"];
     $images = explode(",", $_POST["images"]);
+    $plats = explode("\n", $_POST["plats"]);
+    $menus = explode("\n", $_POST["menus"]);
 
     $restaurants = simplexml_load_file('../xml/restaurants.xml');
     if ($restaurants === false) {
         echo "Failed to load XML file.";
-        foreach(libxml_get_errors() as $error) {
+        foreach (libxml_get_errors() as $error) {
             echo "<br>", $error->message;
         }
         exit;
@@ -36,6 +38,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $img = $imagesElement->addChild('image');
         $img->addChild('url', trim($image));
         $img->addChild('position', 'centre'); // Exemple de position
+    }
+
+    $carte = $newRestaurant->addChild('carte');
+    foreach ($plats as $plat) {
+        list($type, $prix, $description) = explode(",", $plat);
+        $platElement = $carte->addChild('plat');
+        $platElement->addChild('type', trim($type));
+        $platElement->addChild('prix', trim($prix));
+        $platElement->addChild('description', trim($description));
+    }
+
+    $menusElement = $newRestaurant->addChild('menus');
+    foreach ($menus as $menu) {
+        list($titre, $description, $prix) = explode(",", $menu);
+        $menuElement = $menusElement->addChild('menu');
+        $menuElement->addChild('titre', trim($titre));
+        $menuElement->addChild('description', trim($description));
+        $menuElement->addChild('prix', trim($prix));
     }
 
     $result = $restaurants->asXML('../xml/restaurants.xml');
@@ -67,6 +87,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <textarea id="description" name="description" required></textarea><br>
         <label for="images">Images (URLs séparées par des virgules):</label>
         <input type="text" id="images" name="images" required><br>
+        <label for="plats">Plats (Type, Prix, Description séparés par des virgules, une ligne par plat):</label>
+        <textarea id="plats" name="plats" required></textarea><br>
+        <label for="menus">Menus (Titre, Description, Prix séparés par des virgules, une ligne par menu):</label>
+        <textarea id="menus" name="menus" required></textarea><br>
         <input type="submit" value="Ajouter">
     </form>
 </body>

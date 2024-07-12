@@ -18,7 +18,7 @@ if ($films === false) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id']) && isset($_POST['titre']) && isset($_POST['genre']) && isset($_POST['duree']) && isset($_POST['realisateur']) && isset($_POST['langue']) && isset($_POST['annee']) && isset($_POST['synopsis']) && isset($_POST['acteurs'])) {
     $id = $_POST['id'];
     $film = $films->film[intval($id)];
     $film->titre = $_POST["titre"];
@@ -69,21 +69,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
         <form action="modifier_film.php" method="post">
             <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
             <label for="titre">Titre:</label>
-            <input type="text" id="titre" name="titre" value="<?php echo $film->titre; ?>" required><br>
+            <input type="text" id="titre" name="titre" value="<?php echo htmlspecialchars($film->titre, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="genre">Genre:</label>
-            <input type="text" id="genre" name="genre" value="<?php echo $film->genre; ?>" required><br>
+            <input type="text" id="genre" name="genre" value="<?php echo htmlspecialchars($film->genre, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="duree">Durée:</label>
-            <input type="text" id="duree" name="duree" value="<?php echo $film->duree; ?>" required><br>
+            <input type="text" id="duree" name="duree" value="<?php echo htmlspecialchars($film->duree, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="realisateur">Réalisateur:</label>
-            <input type="text" id="realisateur" name="realisateur" value="<?php echo $film->realisateur; ?>" required><br>
+            <input type="text" id="realisateur" name="realisateur" value="<?php echo htmlspecialchars($film->realisateur, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="langue">Langue:</label>
-            <input type="text" id="langue" name="langue" value="<?php echo $film->langue; ?>" required><br>
+            <input type="text" id="langue" name="langue" value="<?php echo htmlspecialchars($film->langue, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="annee">Année:</label>
-            <input type="text" id="annee" name="annee" value="<?php echo $film->annee; ?>" required><br>
+            <input type="text" id="annee" name="annee" value="<?php echo htmlspecialchars($film->annee, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="synopsis">Synopsis:</label>
-            <textarea id="synopsis" name="synopsis" required><?php echo $film->synopsis; ?></textarea><br>
+            <textarea id="synopsis" name="synopsis" required><?php echo htmlspecialchars($film->synopsis, ENT_QUOTES, 'UTF-8'); ?></textarea><br>
             <label for="acteurs">Acteurs (séparés par des virgules):</label>
-            <input type="text" id="acteurs" name="acteurs" value="<?php echo implode(", ", (array)$film->acteurs->acteur); ?>" required><br>
+            <input type="text" id="acteurs" name="acteurs" value="<?php echo htmlspecialchars(implode(", ", (array)$film->acteurs->acteur), ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <input type="submit" value="Modifier">
         </form>
     <?php endif; ?>

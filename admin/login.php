@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h1>Connexion Administrateur</h1>
     <?php if (isset($error)): ?>
-        <p class="error"><?php echo $error; ?></p>
+        <p style="color: red;"><?php echo $error; ?></p>
     <?php endif; ?>
     <form action="login.php" method="post">
         <label for="username">Nom d'utilisateur:</label>

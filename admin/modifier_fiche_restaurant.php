@@ -18,7 +18,7 @@ if ($restaurants === false) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id']) && isset($_POST['nom']) && isset($_POST['adresse']) && isset($_POST['nomRestaurateur']) && isset($_POST['description']) && isset($_POST['images'])) {
     $id = $_POST['id'];
     $restaurant = $restaurants->restaurant[intval($id)];
     $restaurant->coordonnees->nom = $_POST["nom"];
@@ -68,15 +68,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
         <form action="modifier_fiche_restaurant.php" method="post">
             <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
             <label for="nom">Nom:</label>
-            <input type="text" id="nom" name="nom" value="<?php echo $restaurant->coordonnees->nom; ?>" required><br>
+            <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($restaurant->coordonnees->nom, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="adresse">Adresse:</label>
-            <input type="text" id="adresse" name="adresse" value="<?php echo $restaurant->coordonnees->adresse; ?>" required><br>
+            <input type="text" id="adresse" name="adresse" value="<?php echo htmlspecialchars($restaurant->coordonnees->adresse, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="nomRestaurateur">Nom du Restaurateur:</label>
-            <input type="text" id="nomRestaurateur" name="nomRestaurateur" value="<?php echo $restaurant->coordonnees->nomRestaurateur; ?>" required><br>
+            <input type="text" id="nomRestaurateur" name="nomRestaurateur" value="<?php echo htmlspecialchars($restaurant->coordonnees->nomRestaurateur, ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <label for="description">Description:</label>
-            <textarea id="description" name="description" required><?php echo $restaurant->coordonnees->description; ?></textarea><br>
+            <textarea id="description" name="description" required><?php echo htmlspecialchars($restaurant->coordonnees->description, ENT_QUOTES, 'UTF-8'); ?></textarea><br>
             <label for="images">Images (URLs séparées par des virgules):</label>
-            <input type="text" id="images" name="images" value="<?php echo implode(", ", (array)$restaurant->coordonnees->images->image); ?>" required><br>
+            <input type="text" id="images" name="images" value="<?php echo htmlspecialchars(implode(", ", (array)$restaurant->coordonnees->images->image), ENT_QUOTES, 'UTF-8'); ?>" required><br>
             <input type="submit" value="Modifier">
         </form>
     <?php endif; ?>
