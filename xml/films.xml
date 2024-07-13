@@ -3,4 +3,6 @@
 <cinema>
   
   <!-- Ajouter plus de films ici -->
-<film><titre>deguene</titre><genre>fa</genre><duree>4</duree><realisateur>faty</realisateur><langue>francais</langue><annee>2029</annee><synopsis>se</synopsis><acteurs><acteur>qw</acteur><acteur>er</acteur><acteur>ty</acteur></acteurs></film><film><titre>maman</titre><genre>die</genre><duree>5ans</duree><realisateur>astou</realisateur><langue>anglais</langue><annee>2024</annee><synopsis>recit</synopsis><acteurs><acteur>deguene</acteur><acteur>mane</acteur></acteurs></film><film><titre>yaya</titre><genre>m</genre><duree>165min</duree><realisateur>takkino</realisateur><langue>anglais</langue><annee>2023</annee><synopsis>qwertyu</synopsis><acteurs><acteur>var</acteur><acteur>war</acteur><acteur>yaya</acteur></acteurs></film></cinema>
+<film><titre>La Pirogue</titre><genre>Drame</genre><duree>87min</duree><realisateur>Moussa Toure</realisateur><langue>FR</langue><annee>2012</annee><synopsis>Une pirogue transportant des émigrants sénégalais se dirige vers les îles Canaries.&#13;
+</synopsis><acteurs><acteur>Souleymane Seye Ndiaye</acteur><acteur>Laity Fall</acteur><acteur> Malamine Drame</acteur></acteurs></film><film><titre>Le Grand Bleu</titre><genre>Drame</genre><duree>168min</duree><realisateur>Luc Besson</realisateur><langue>fr</langue><annee>1998</annee><synopsis>L'histoire d'un plongeur en apnée et de sa rivalité avec un autre plongeur.&#13;
+</synopsis><acteurs><acteur>Jean-Marc Barr</acteur><acteur>Jean Reno</acteur><acteur>Rosanna Arquette</acteur></acteurs></film></cinema>
